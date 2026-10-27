@@ -1,0 +1,90 @@
+body {
+    background-color: #cfcfcf;
+    font-family: Calibri, sans-serif;
+}
+
+p {
+    color: #333;
+    line-height: 1.6;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.pasek {
+    background-color: #4e4e4e;
+    height: 40px;
+    width: 110%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+.box_szeroko{
+    display: flex;
+    gap: 16px;
+}
+
+.pasek_szeroko{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+}
+
+.pasek_tekst {
+    color: #fff;
+    font-size: 20px;
+    text-align: left;
+    padding: 5px 0;
+    margin-left: 20px;
+    font-family: Calibri, sans-serif;
+    font-weight: bold;
+}
+
+.box_pomiarowy_ciało {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    width: 20%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.box_pomiarowy_tytuł {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.box_pomiarowy_tekst {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.box_pomiarowy_average {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.City {
+    margin: 0;
+}
+
+.City select {
+    background-color: #fff;
+    color: #333;
+    font: inherit;
+    font-size: 16px;
+    padding: 6px 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.City select:focus {
+    outline: 2px solid #8bb8e8;
+    outline-offset: 2px;
+}

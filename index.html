@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Pomiar jakości powietrza</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+        <div class="pasek">
+            <p class="pasek_tekst">System pomiaru jakości powietrza</p>
+        </div>
+
+        <div class="box_szeroko">
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł">Temperatura</p>
+                <p class="box_pomiarowy_tekst"><span id="Temp">-</span>°C</p>
+                <p class="box_pomiarowy_average">Średnia: <span id="AvgTemp">-</span>°C</p>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł">Wilgotność</p>
+                <p class="box_pomiarowy_tekst"><span id="Humi">-</span>%</p>
+                <p class="box_pomiarowy_average">Średnia: <span id="AvgHumi">-</span>%</p>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł">Ciśnienie</p>
+                <p class="box_pomiarowy_tekst"><span id="Press">-</span>hPa</p>
+                <p class="box_pomiarowy_average">Średnia: <span id="AvgPress">-</span>hPa</p>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł">Jakość powietrza</p>
+                <p class="box_pomiarowy_tekst"><span id="AirCon">-</span>AQI</p>
+                <p class="box_pomiarowy_average">Średnia: <span id="AvgAirCon">-</span>AQI</p>
+            </div>
+        
+        </div>
+
+        <div class="box_szeroko">
+
+            <div class="box_pomiarowy_ciało">
+                <canvas id="TempChart"></canvas>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <canvas id="HumiChart"></canvas>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <canvas id="PressChart"></canvas>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <canvas id="AirConChart"></canvas>
+            </div>
+
+        </div>
+
+        <div class="pasek">
+            <div class="pasek_szeroko">
+                <p class="pasek_tekst">Pomiary online</p>
+                <form class="City">
+                    <select name="miasto">
+                        <option value="Opole">Opole</option>
+                        <option value="Sosnowiec">Sosnowiec</option>
+                        <option value="Radom">Radom</option>
+                        <option value="Prudnik">Prudnik</option>
+                        <option value="Bydgoszcz">Bydgoszcz</option>
+                        <option value="Zimna Wódka">Zimna Wódka</option>
+                        <option value="Cyców">Cyców</option>
+                        <option value="Wadowice">Wadowice</option>
+                        <option value="Pyongyang,KP">Pyongyang</option>
+                        <option value="Hiroshima,JP">Hiroshima</option>
+                        <option value="Nagasaki,JP">Nagasaki</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+
+        <div class="box_szeroko">
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł">Temperatura</p>
+                <p class="box_pomiarowy_tekst"><span id="WeatherTemp">-</span>°C</p>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł">Wilgotność</p>
+                <p class="box_pomiarowy_tekst"><span id="WeatherHumidity">-</span>%</p>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł">Ciśnienie</p>
+                <p class="box_pomiarowy_tekst"><span id="WeatherPressure">-</span>hPa</p>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł">Prędkość wiatru</p>
+                <p class="box_pomiarowy_tekst"><span id="WeatherWind">-</span>m/s</p>
+            </div>
+            
+        </div>
+
+        <div class="pasek">
+            <div class="pasek_szeroko">
+                <p class="pasek_tekst">Dane Raspberry Pi</p>
+                <button id="modeToggle" onclick="przelaczDane()">Pokaż dane Sense HAT</button>
+            </div>
+        </div>
+
+        <div class="box_szeroko">
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł"><span id="title1">-</span></p>
+                <p class="box_pomiarowy_tekst"><span id="raspberryValue1">-</span></p>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł"><span id="title2">-</span></p>
+                <p class="box_pomiarowy_tekst"><span id="raspberryValue2">-</span></p>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł"><span id="title3">-</span></p>
+                <p class="box_pomiarowy_tekst"><span id="raspberryValue3">-</span></p>
+            </div>
+
+            <div class="box_pomiarowy_ciało">
+                <p class="box_pomiarowy_tytuł"><span id="title4">-</span></p>
+                <p class="box_pomiarowy_tekst"><span id="raspberryValue4">-</span></p>
+            </div>
+
+        </div>
+        <p id="RaspberryStatus" role="status" aria-live="polite"></p>
+        <p style="color: #cfcfcf" id="WeatherStatus" role="status" aria-live="polite"></p>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="dane.js"></script>
+    </body>
+
+</html>
